@@ -32,6 +32,10 @@ const template =
 		</li>
 	</ol>
 `
+/*
+	this is going to be consumed as a vue component,
+	so we only need to export an object... which is nice
+*/
 
 export default {
 
