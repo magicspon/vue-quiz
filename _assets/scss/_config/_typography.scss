@@ -1,0 +1,194 @@
+// Typographic v2.9.2 - https://github.com/corysimmons/typographic
+@font-face {
+    font-family: 'apercu-mono';
+    src: url('../fonts/apercu-mono.eot');
+    src: url('../fonts/apercu-mono.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/apercu-mono.woff') format('woff'),
+         url('../fonts/apercu-mono.woff2') format('woff2'),
+         url('../fonts/apercu-mono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'NeutrifPro-Light';
+	src: url('../fonts/32E82F_0_0.eot');
+	src: url('../fonts/32E82F_0_0.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/32E82F_0_0.woff2') format('woff2'),
+		url('../fonts/32E82F_0_0.woff') format('woff'),
+		url('../fonts/32E82F_0_0.ttf') format('truetype');
+}
+
+
+@font-face {
+	font-family: 'NeutrifPro-Bold';
+	src: url('../fonts/32E82F_1_0.eot');
+	src: url('../fonts/32E82F_1_0.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/32E82F_1_0.woff2') format('woff2'),
+	url('../fonts/32E82F_1_0.woff') format('woff'),
+	url('../fonts/32E82F_1_0.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'NeutrifPro-Regular';
+	src: url('../fonts/32E82F_7_0.eot');
+	src: url('../fonts/32E82F_7_0.eot?#iefix') format('embedded-opentype'), 
+	url('../fonts/32E82F_7_0.woff2') format('woff2'), 
+	url('../fonts/32E82F_7_0.woff') format('woff'), 
+	url('../fonts/32E82F_7_0.ttf') format('truetype');
+}
+
+
+// Sans-serif
+
+$calibri       : 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', 'Arial', 'sans-serif';
+$candara       : 'Candara', 'Calibri', 'Segoe', 'Segoe UI', 'Optima', 'Arial', 'sans-serif';
+$courier       : 'Courier New', 'Courier', 'Lucida Sans Typewriter', 'Lucida Typewriter', 'monospace';
+$franklin      : 'Franklin Gothic Medium', 'Arial', 'sans-serif';
+$futura        : 'Futura', 'Trebuchet MS', 'Arial', 'sans-serif';
+$geneva        : 'Geneva', 'Tahoma', 'Verdana', 'sans-serif';
+$gill-sans     : 'Gill Sans', 'Gill Sans MT', 'Calibri', 'sans-serif';
+$helvetica     : 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+$lucida-grande : 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Geneva', 'Verdana', 'sans-serif';
+$optima        : 'Optima', 'Segoe', 'Segoe UI', 'Candara', 'Calibri', 'Arial', 'sans-serif';
+$segoe         : 'Segoe', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif';
+$tahoma        : 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+$trebuchet     : 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Tahoma', 'sans-serif';
+$verdana       : 'Verdana', 'Geneva', 'sans-serif';
+
+
+// Serif
+
+$antiqua       : 'Book Antiqua', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Georgia', 'serif';
+$baskerville   : 'Baskerville', 'Baskerville old face', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$bodoni        : 'Bodoni MT', 'Didot', 'Didot LT STD', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$cambria       : 'Cambria', 'Georgia', 'serif';
+$caslon        : 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', 'Georgia', 'serif';
+$constantia    : 'Constantia', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Georgia', 'serif';
+$didot         : 'Didot', 'Didot LT STD', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$garamond      : 'Garamond', 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', 'serif';
+$goudy         : 'Goudy Old Style', 'Garamond', 'Big Caslon', 'Times New Roman', 'serif';
+$hoefler       : 'Hoefler Text', 'Baskerville old face', 'Garamond', 'Times New Roman', 'serif';
+$lucida-bright : 'Lucida Bright', 'Georgia', 'serif';
+$palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua", 'Georgia', 'serif';
+
+
+
+/*
+  typography
+*/
+$base-font-size: 20;
+$base-line-height: 32;
+$browser-default-font-size: 16px;
+
+
+
+$minor-second   : 1.067;
+$major-second   : 1.125;
+$minor-third    : 1.2;
+$major-third    : 1.25;
+$perfect-fourth : 1.333;
+$aug-fourth     : 1.414;
+$perfect-fifth  : 1.5;
+$minor-sixth    : 1.6;
+$golden         : 1.618;
+$major-sixth    : 1.667;
+$minor-seventh  : 1.778;
+$major-seventh  : 1.875;
+$octave         : 2;
+$major-tenth    : 2.5;
+$major-eleventh : 2.667;
+$major-twelfth  : 3;
+$double-octave  : 4;
+
+$ms-base: 16px;
+$ms-ratio: $minor-third;
+
+$line-height-ratio: 1.75 !default;
+$heading-ratio: $golden !default;
+$body-font: 'NeutrifPro-Light', sans-serif !default;
+$body-font-weight: 300 !default;
+$body-color: #000 !default;
+$heading-font: 'NeutrifPro-Bold', sans-serif !default;
+$heading-font-weight : 500 !default;
+$heading-color: #000 !default;
+$min-font: 14px !default;
+$max-font: 22px !default;
+$min-width: 600px !default;
+$max-width: 1140px !default;
+$vertical-rhythm: true !default;
+
+$desktop-line-height: 30px;
+
+/*
+  Font stack
+*/
+
+/*
+  Font stack
+*/
+$fonts: (
+  default: 'NeutrifPro-Regular',
+	light: 'NeutrifPro-Light',
+  bold: 'NeutrifPro-Bold',
+  mono: 'apercu-mono'
+);
+
+
+/*
+	map of font sizes,
+	if the font size is the same at mobile and desktop you only need to define the
+	font in one of the maps, otherwise the same font name needs to be used in both
+	mobile and desktop maps
+*/
+
+$font-sizes: (
+	mobile: (
+		body: 14px,
+		intro: 20px,
+		menu-item: 20px,
+		dt: 10px,
+		dd: 14px,
+		dev-meta: 12px,
+		plain-text-heading: 15px,
+		h4: 15px,
+		quote: 20px,
+
+		small: 12px,
+		date: 14px,
+		post-intro: 17px,
+
+
+
+		heading-1: 40px,
+		heading-2: 30px,
+		heading-3: 22px,
+		heading-4: 13px,
+		heading-5: 12px,
+		heading-6: 10px,
+		hero-blurb: 16px,
+		person: 12px,
+		project-hero: 30px,
+		pagination: 13px
+	),
+
+	desktop: (
+		body: 20px,
+		intro: 35px,
+		menu-item: 29px,
+		dt: 12px,
+		dd: 16px,
+		dev-meta: 13px,
+		quote: 35px,
+		small: 14px,
+		heading-1: 48px,
+		heading-2: 40px,
+		heading-3: 27px,
+		heading-4: 15px,
+		heading-5: 13px,
+		heading-6: 12px,
+		person: 14px,
+		hero-blurb: 19px,
+		project-hero: 60px
+	)
+);

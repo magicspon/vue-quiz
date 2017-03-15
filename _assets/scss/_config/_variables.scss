@@ -1,0 +1,85 @@
+// debugging
+$debug: true;
+/*
+  Gutters
+*/
+$base-padding: 25;
+
+
+/*
+  Colours
+*/
+$white: #fff;
+$black: #18171b;  
+
+$palettes:(
+  bg: (
+    body: #e5e5e5,
+    dark: #1f1f22,
+    light: #f5f5f5,
+    dev: #1f1f22
+  ),
+
+  themes: (
+    cyan: #45e7ff
+  ),
+
+  menu: (
+    base: #49474f,
+    active: #ffffff
+  ),
+
+  dev-notes: (
+    role: #818189
+  ),
+
+	dash: (
+		onblack: #333139,
+    grey: #3c3c40,
+    cyan: #45e7ff
+	),
+
+  type: (
+    base: #444444,
+    dark: #232323,
+    light: #818189,
+    cyan: #45e7ff
+  ),
+
+  buttons: (
+    upload: #bfc8d2
+  ),
+  
+  states: (
+    upload: #bfc8d2
+  ),
+
+  border: (
+    base: rgba(#28272a, .15)
+  ),
+
+  social: (
+    bg: #28272a,
+    border: #000000
+  )
+);
+
+
+/*
+  Breakpoints
+*/
+
+$breakpoints: (
+  mobile:  320px,
+  sm-tablet:600px,
+  tablet:  740px,
+  desktop: 980px,
+  wide:    1300px
+);
+
+
+/* lost grid settings */
+
+@lost gutter #{gutter(1)};
+@lost clearing left;
+@lost flexbox flex;

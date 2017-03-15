@@ -1,0 +1,319 @@
+/*
+  Base wrapper
+	Add a little side padding for some sweet mobile side spacing
+	This class should not be used on the same element as vr class
+*/
+
+.wrapper {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 gutter(1);
+}
+
+.site {
+	overflow-x: hidden;
+}
+
+// [id="app"] {
+// 	min-height: 100vh;
+// 	display: flex;
+// 	flex-direction: column;
+// }
+
+// .main {
+// 	flex: 1;
+// }
+
+
+
+
+
+
+
+
+/// Margins
+
+.m0 {
+	margin: 0;
+}
+
+/// Margins - small (only bottom margin here, shouldn't need top margin)
+
+.mb-sm {
+	margin-bottom: gutter(.5);
+}
+
+.mb-sm2 {
+	margin-bottom: gutter(.25);
+}
+
+/// Margins, increments
+
+.mt {
+	margin-top: gutter(1);
+}
+
+.mt2 {
+	margin-top: gutter(2);
+}
+
+.mb {
+	margin-bottom: gutter(1);
+}
+
+.mb2 {
+	margin-bottom: gutter(2);
+}
+
+/// Margins sides, increments
+
+.mr {
+	margin-right: gutter(1);
+}
+
+
+/// special dash margi
+.mb-dash {
+	margin-bottom: gutter(1.5);
+}
+
+
+@include mq($from: breakpoint('tablet')) {
+	.m0\@t {
+		margin: 0;
+	}
+
+	.mt\@t {
+		margin-top: gutter(1);
+	}
+
+	.mt2\@t {
+		margin-top: gutter(2);
+	}
+
+	.mb\@t {
+		margin-bottom: gutter(1);
+	}
+
+	.mb2\@t {
+		margin-bottom: gutter(2);
+	}
+
+	.mb3\@t {
+		margin-bottom: gutter(3);
+	}
+}
+
+
+@include mq($from: breakpoint('desktop')) {
+	.mt\@d {
+		margin-top: gutter(1);
+	}
+
+	.mt2\@d {
+		margin-top: gutter(2);
+	}
+
+	.mr\@d {
+		margin-right: gutter(2);
+	}
+
+	.mb0\@d {
+		margin-bottom: 0;
+	}
+
+	.mb\@d {
+		margin-bottom: gutter(1);
+	}
+
+	.mb2\@d {
+		margin-bottom: gutter(2);
+	}
+
+	.mb3\@d {
+		margin-bottom: gutter(3);
+	}
+
+	.mb4\@d {
+		margin-bottom: gutter(4);
+	}
+}
+
+
+
+
+
+
+
+
+
+// padding
+
+/// paddings
+
+.p0 {
+	padding: 0;
+}
+
+/// paddings - small (only bottom padding here, shouldn't need top padding)
+
+.pb-sm {
+	padding-bottom: gutter(.5);
+}
+
+.pb-sm2 {
+	padding-bottom: gutter(.25);
+}
+
+/// paddings, increments
+
+.pa {
+	padding: gutter(1);
+}
+
+.pa-sm {
+	padding: gutter(.5);
+}
+
+.pt {
+	padding-top: gutter(1);
+}
+
+.pt2 {
+	padding-top: gutter(2);
+}
+
+.pt3 {
+	padding-top: gutter(3);
+}
+
+.pt4 {
+	padding-top: gutter(4);
+}
+
+.pb {
+	padding-bottom: gutter(1);
+}
+
+.pb2 {
+	padding-bottom: gutter(2);
+}
+
+.pb3 {
+	padding-bottom: gutter(3);
+}
+
+.pb4 {
+	padding-bottom: gutter(4);
+}
+
+/// paddings sides, increments
+
+.pr {
+	padding-right: gutter(1);
+}
+
+
+/// special dash margi
+.pb-dash {
+	padding-bottom: gutter(1.5);
+}
+
+
+@include mq($from: breakpoint('tablet')) {
+	.pt\@t {
+		padding-top: gutter(1);
+	}
+
+	.pt2\@t {
+		padding-top: gutter(2);
+	}
+
+	.pt3\@t {
+		padding-top: gutter(3);
+	}
+
+	.pb\@t {
+		padding-bottom: gutter(1);
+	}
+
+	.pb2\@t {
+		padding-bottom: gutter(2);
+	}
+
+	.pb3\@t {
+		padding-bottom: gutter(3);
+	}
+
+	.pb0\@t {
+		padding-bottom: 0;
+	}
+}
+
+
+@include mq($from: breakpoint('desktop')) {
+	.pa2\@d {
+		padding: gutter(2);
+	}
+
+	.pt\@d {
+		padding-top: gutter(1);
+	}
+
+	.pt2\@d {
+		padding-top: gutter(2);
+	}
+
+	.pt3\@d {
+		padding-top: gutter(3);
+	}
+
+	.pt4\@d {
+		padding-top: gutter(4);
+	}
+
+	.pb0\@d {
+		padding-bottom: 0;
+	}
+
+	.pb\@d {
+		padding-bottom: gutter(1);
+	}
+
+	.pb2\@d {
+		padding-bottom: gutter(2);
+	}
+
+	.pb3\@d {
+		padding-bottom: gutter(3);
+	}
+
+	.pb4\@d {
+		padding-bottom: gutter(4);
+	}
+
+	.ps2\@d {
+		padding-left: gutter(2);
+		padding-right: gutter(2);
+	}
+
+	.pr2\@d {
+		padding-right: gutter(2);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/// borders
+
+.bb {
+	border-bottom: 1px solid c(border, base);
+}

@@ -1,0 +1,238 @@
+/*
+ Typography
+*/
+
+@include type-reveal();
+
+
+
+
+
+
+
+
+
+
+/*
+	Root
+*/
+
+html {
+	font-family: font('default');
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	@include resp-map('body', true);
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: c(type, base);
+}
+
+
+
+
+
+
+
+
+
+
+/*
+	Headings
+*/
+
+.heading-1,
+h1 {
+	@include resp-map('heading-1');
+
+	font-family: font('bold');
+	margin: 0 0 gutter(1);
+	letter-spacing: -.025em;
+}
+
+.heading-2,
+h2 {
+	@include resp-map('heading-2');
+
+	font-family: font('bold');
+	margin: 0 0 gutter(1);
+}
+
+.heading-3,
+h3 {
+	@include resp-map('heading-3');
+
+	font-family: font('bold');
+	margin: 0 0 gutter(1);
+}
+
+.heading-4,
+h4 {
+	@include resp-map('heading-4');
+
+	font-family: font('bold');
+	margin: 0 0 gutter(1);
+}
+
+.heading-5,
+h5 {
+	@include resp-map('heading-5');
+
+	font-family: font('bold');
+	margin: 0 0 gutter(1);
+}
+
+.heading-6,
+h6 {
+	@include resp-map('heading-6');
+
+	font-family: font('bold');
+	margin: 0 0 gutter(1);
+}
+
+
+
+
+
+
+
+
+
+
+/*
+	Base element styles
+	avoid adding font sizes to elements directly
+	utilise the cascade and utility classes
+*/
+
+p {
+	margin: 0 0 gutter(.5);
+}
+
+* {
+	font-weight: normal;
+}
+
+b,
+strong {
+	font-family: font('bold');
+}
+
+em,
+cite {
+	font-style: normal;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: opacity 300ms ease;
+
+	&:hover {
+		opacity: .5;
+	}
+}
+
+address {
+	font-style: normal;
+}
+
+
+
+
+.dash {
+	display: block;
+	position: relative;
+	line-height: 1;
+
+	&::after {
+		position: absolute;
+		left: 0;
+		bottom: gutter(-.5);
+		width: rem(80px);
+		height: rem(2px);
+		content: " ";
+		display: block;
+		background-color: c(dash, cyan);
+	}
+}
+
+.dash--screen {
+	&::after {
+		right: 0;
+		margin: auto;
+	}
+}
+
+.dash--cyan {
+	&::after {
+		background-color: c(dash, cyan);
+	}
+}
+
+.dash--grey {
+	&::after {
+		background-color: c(dash, grey);
+	}
+}
+
+
+.dash--onblack {
+	&::after {
+		background-color: c(dash, onblack);
+	}
+}
+
+.dash--date {
+	&::after {
+		width: 100%;
+	}
+}
+
+.t-mono {
+	font-family: font('mono');
+	text-transform: uppercase;
+	letter-spacing: .2em;
+	font-weight: normal;
+}
+
+.t-upper {
+	text-transform: uppercase;
+}
+
+.t-lower {
+	text-transform: none;
+}
+
+.t-dark {
+	color: c(type, dark);
+}
+
+.t-cyan {
+	color: c(type, cyan);
+}
+
+.t-white {
+	color: $white;
+}
+
+.t-light {
+	color: c(type, light);
+}
+
+.t-small {
+	@include resp-map('small');
+}
+
+.t-center {
+	text-align: center;
+}
+
+@include mq($from: breakpoint('desktop')) {
+	.t-left\@d {
+		text-align: left;
+	}
+}
