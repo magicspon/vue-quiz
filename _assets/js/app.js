@@ -1,6 +1,14 @@
+/*
+	import the things... 
+*/
+
 import debug from 'debug'
 import Vue from 'vue'
 window.log = debug('app:log')
+
+/*
+	The question component... this is where the magic happens
+*/
 import Question from './Question'
 
 if(process.env.NODE_ENV === 'development') {
@@ -9,8 +17,16 @@ if(process.env.NODE_ENV === 'development') {
 	debug.disable('app:log')
 }
 
+/*
+	Main app component 
+*/
+
 new Vue({
 
+	/*
+		le data... can't remember if it needs to be a function 
+		in this instance, but it's how I role
+	*/
 	data() {
 		return {
 			questions: [
@@ -79,14 +95,29 @@ new Vue({
 		}
 	},
 
+	/*
+		register the component
+	*/
 	components: {
 		'question-template': Question
 	},
 
+
+	/*
+		the template, passing some properties to the question component
+		each question is a component, which is key
+	*/
 	template: `
 		<div>
 			<div v-for='question in questions'>
-				<question-template :id="question.id" :answers='question.answers' :type='question.type' :responses='question.responses' />
+				<question-template 
+					:id="question.id" 
+					:answers='question.answers' 
+					:type='question.type' 
+					:responses='question.responses' 
+					:title='question.title' 
+					:text='question.text' 
+				/>
 			</div>
 		</div>
 	`
