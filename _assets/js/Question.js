@@ -15,6 +15,7 @@ const template =
 		<li>
 			<h2>{{ title }}</h2>
 			<div v-html="text"></div>
+			<p>{{ question }}</p>
 			<form v-on:submit.prevent="onSubmit" ref="form">
 				<div v-for="(answer, index) in answers">
 					<div v-if="type === 'checkbox'">
@@ -73,6 +74,10 @@ export default {
 			required: true
 		},
 		title: {
+			type: String,
+			required: true
+		},
+		question: {
 			type: String,
 			required: true
 		},

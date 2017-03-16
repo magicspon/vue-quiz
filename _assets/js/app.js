@@ -35,63 +35,63 @@ new Vue({
 			questions: [
 				{
 					id: 'q1',
-					title: 'Ensuring you are a suitable assessor',
-					text: '<p><b>We need to avoid any conflicts of interest.</b> So if you have any relationship with the company or venue that you would be visiting (for example, if you or a friend work there), we would ask you not to select that visit.<b>Also, you should be a typical customer</b> - so if it\'s the kind of place you wouldn\'t normally visit, this may invalidate your report</p><p>If you\'ve been there before and had a bad time but feel like giving them another chance, that\'s fine.</p>',
-					question: 'Which of these scenarios mean there is a potential conflict of interest?',
+					title: 'This one is about onions',
+					text: '<p>Sting, not here</p>',
+					question: 'In what year did Boris Copcough invent the glance?',
 					type: 'checkbox',
 					answers: [
 						{
 							id: 'a1',
-							text: 'I have been there before and normally enjoy it but didn\'t last time'
+							text: 'Know one nos'
 						},
 						{
 							id: 'a2',
-							text: 'I work there (or have in the past) or I know someone who does',
-							correct: true
+							text: '10',
 						},
 						{
 							id: 'a3',
-							text: 'I don\'t really like the style of service for that brand so wouldn\'t choose to go there ordinarily',
+							text: 'over 10',
 							correct: true
 						},
 						{
 							id: 'a4',
-							text: 'I don\'t know the location of the visit'
+							text: '1245',
+							correct: true
 						}
 					],
 					responses: {
-						correct: 'That is correct, well done',
-						incorrect: 'Incorrect, try again'
+						correct: 'Boris Copcough, I know, right, amazing... Boris Copcough... legend... great glance',
+						incorrect: 'Seriously... idiot... come on... think about it'
 					},
 				},
 				{
 					id: 'q2',
-					title: 'Booking and cancelling a visit',
-					text: '<p>When you book a visit it will be for a specific date (and probably time). We need to be sure that <b>you will make every effort to complete the visit</b> and report as scheduled. Otherwise it can really mess up the performance reporting schedule for our clients.</p><p>If you come across any difficulties or need to cancel the visit, please let us know as soon as possible so that we can try to make alternative arrangements.</p>',
-					question: 'You\'ve booked a visit but something urgent has come up which means you can\'t attend. What should you do?',
+					title: 'What ever',
+					text: '<p>Sting, sorry, no sign.</p>',
+					question: 'You\'ve got one arm, and an army of endless warrior babies are after you... how long will you survive?',
 					type: 'radio',
 					answers: [
 						{
 							id: 'a1',
-							text: 'Just go the following day'
+							text: '10 - 30 minutes'
 						},
 						{
 							id: 'a2',
-							text: 'Cancel the visit online or contact FOO as soon as possible',
+							text: '30 - 60 minutes',
 							correct: true
 						},
 						{
 							id: 'a3',
-							text: 'Ask a friend to go for you and make notes'
+							text: '60 minutes to a day'
 						},
 						{
 							id: 'a4',
-							text: 'Go back online and sign up for antoher visit without cancelling this one'
+							text: 'time machine, kill the dad(s)'
 						}
 					],
 					responses: {
-						correct: 'That is correct, well done',
-						incorrect: 'Incorrect, try again'
+						correct: 'If you\'re lucky' ,
+						incorrect: 'Twat... no way.... twat'
 					},
 				},
 			]
@@ -147,6 +147,7 @@ new Vue({
 		<div>
 			<question-template 
 				:id="current.id" 
+				:question="current.question"
 				:answers='current.answers' 
 				:type='current.type' 
 				:responses='current.responses' 
