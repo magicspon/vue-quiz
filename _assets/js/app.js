@@ -35,8 +35,6 @@ new Vue({
 			questions: [
 				{
 					id: 'q1',
-					title: 'This one is about onions',
-					text: '<p>Sting, not here</p>',
 					question: 'In what year did Boris Copcough invent the glance?',
 					type: 'checkbox',
 					answers: [
@@ -66,8 +64,6 @@ new Vue({
 				},
 				{
 					id: 'q2',
-					title: 'What ever',
-					text: '<p>Sting, sorry, no sign.</p>',
 					question: 'You\'ve got one arm, and an army of endless warrior babies are after you... how long will you survive?',
 					type: 'radio',
 					answers: [
@@ -151,8 +147,6 @@ new Vue({
 				:answers='current.answers' 
 				:type='current.type' 
 				:responses='current.responses' 
-				:title='current.title' 
-				:text='current.text' 
 				:nextQuestion='nextQuestion'
 			/>
 		</div>
