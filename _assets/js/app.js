@@ -26,9 +26,12 @@ new Vue({
 	/*
 		le data... can't remember if it needs to be a function 
 		in this instance, but it's how I role
+
+		added an index prop... just for shits and giggles really
 	*/
 	data() {
 		return {
+			index: 0,
 			questions: [
 				{
 					id: 'q1',
@@ -102,6 +105,39 @@ new Vue({
 		'question-template': Question
 	},
 
+	computed: {
+		current() {
+			return this.questions[this.index]
+		}
+	},
+
+	/*
+		not quite sure if i need to use watch here, 
+		i thought computed would updated from the current value on change
+		method.. it didn't so, i watched the index value, 
+		which is updated from the nextQuestion method
+	*/
+	watch: {
+		index() {
+			/*
+				update the change prop to the next question
+				hello... re render... boooooya
+			*/
+			this.current = this.questions[this.index]
+		}
+	},
+	
+	/*
+		this method is passed down as a prop
+		and called from within the question component
+		props down, events up... nice
+	*/
+	methods: {
+		nextQuestion() {
+			this.index += 1
+		}
+	},
+
 
 	/*
 		the template, passing some properties to the question component
@@ -109,16 +145,15 @@ new Vue({
 	*/
 	template: `
 		<div>
-			<div v-for='question in questions'>
-				<question-template 
-					:id="question.id" 
-					:answers='question.answers' 
-					:type='question.type' 
-					:responses='question.responses' 
-					:title='question.title' 
-					:text='question.text' 
-				/>
-			</div>
+			<question-template 
+				:id="current.id" 
+				:answers='current.answers' 
+				:type='current.type' 
+				:responses='current.responses' 
+				:title='current.title' 
+				:text='current.text' 
+				:nextQuestion='nextQuestion'
+			/>
 		</div>
 	`
 

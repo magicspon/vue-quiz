@@ -1,5 +1,12 @@
 /*
 	The template... 
+	
+	when the answer is bob on.. show a cunting next question
+	button, and trigger the function passed a prop... 
+	
+		<div v-if="correct">
+			<button @click.prevent="nextQuestion">Next</button>
+		</div>
 */
 
 const template =
@@ -30,6 +37,9 @@ const template =
 
 			<div v-if="asked">
 				{{ feedback }}
+				<div v-if="correct">
+					<button @click.prevent="nextQuestion">Next</button>
+				</div>
 			</div>
 		</li>
 	</ol>
@@ -69,6 +79,14 @@ export default {
 		text: {
 			type: String,
 			required: true
+		},
+
+		/*
+			next question method prop jobber
+		*/
+		nextQuestion: {
+			type: Function,
+			required: false
 		}
 	},
 
@@ -83,7 +101,7 @@ export default {
 			prev: null
 		}
 	},
-
+	
 	/*
 		create a computed property
 		total, which is the total number of correct answers
@@ -109,6 +127,18 @@ export default {
 		(or the value changes) this function will be trigger
 	*/
 	watch: {
+
+		/*
+			I said oi ID... have you changed... if you've changed 
+			you must be a new fucking question... well booya.. boosh
+			reset all the shit... waaaa... waaa. do it... i've got a gun
+		*/
+		id() {
+			this.userInput = [],
+			this.asked = false,
+			this.correct = false,
+			this.prev = null
+		},
 		/*
 			input is the :value from the input
 		*/
@@ -124,7 +154,6 @@ export default {
 				if(this.type === 'radio') {
 					if(this.correctedIds.includes(input)) {
 						this.correct = true
-						log('correct')
 					}
 				} 
 
