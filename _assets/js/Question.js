@@ -12,14 +12,14 @@ const template =
 				<div v-for="(answer, index) in answers">
 					<div v-if="type === 'checkbox'">
 						<label :for="id + index">
-							<input :value="answer.id" v-model="user" :name="id + index" :id="id + index" type="checkbox"/>
+							<input :value="answer.id" v-model="userInput" :name="id + index" :id="id + index" type="checkbox"/>
 							{{ answer.text }}
 						</label>
 					</div>
 
 					<div v-if="type === 'radio'">
 						<label :for="id  + index">
-							<input :value="answer.id" v-model="user" :name="id" :id="id  + index" type="radio"/>
+							<input :value="answer.id" v-model="userInput" :name="id" :id="id  + index" type="radio"/>
 							{{ answer.text }}
 						</label>
 					</div>
@@ -77,7 +77,7 @@ export default {
 	*/
 	data() {
 		return {
-			user: [],
+			userInput: [],
 			asked: false,
 			correct: false,
 			prev: null
@@ -112,7 +112,7 @@ export default {
 		/*
 			input is the :value from the input
 		*/
-		user(input) {
+		userInput(input) {
 
 			if(!this.correct) {
 				if(this.type === 'checkbox') {
