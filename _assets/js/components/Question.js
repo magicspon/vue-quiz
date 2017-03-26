@@ -22,6 +22,7 @@ const template =
 			<div v-if="question.type == 'select'">
 				<quiz-select :answers="question.answers" :id="question.id" :total="question.totalCorrect" :correctIds="question.correctIds"></quiz-select>
 			</div>
+			
 		</div>
 		<button @click.prevent="onSubmit">Answer</button>
 		<div v-if="showFeedBack">

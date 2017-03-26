@@ -4,6 +4,9 @@ import {
 } from '../../api'
 import { insertAtIndex } from '../../helpers/utils'
 
+/*
+	Our inital state
+*/
 const state = {
 	questions: [],
 	score: 0,
@@ -13,6 +16,10 @@ const state = {
 	progress: 0
 }
 
+/*
+	getters...
+	a function that takes state, and returns a subtree of state (or anything!)
+*/
 const getters = {
 	questions: state => state.questions,
 	score: state => state.score,
@@ -24,12 +31,22 @@ const getters = {
 	last: state => state.currentIndex === state.questions.length - 1
 }
 
+
+/*
+	async actions
+	ajax shiz
+*/
 const actions = {
 	fetch({
 		commit
 	}) {
 		fetchQuestionJson()
 			.then((resp) => {
+				/*
+					modifiying the json response a bit,
+					adding ids, getting the correct ids, 
+					total answers, etc, etc
+				*/
 				const data = resp.data.map((q) => {
 					const questions = q.questions.map((qu, k) => {
 						const correct = []
@@ -58,12 +75,19 @@ const actions = {
 					}
 				})
 
+				/*
+					commit the mutation 
+				*/
 				commit(types.FETCH_QUESTIONS, data)
 			})
 	},
 }
 
-
+/*
+	synchronous updates
+	each mutation, takes the entire state tree, and a payload
+	types is just an array of strings.. naming convention lark
+*/
 const mutations = {
 	[types.FETCH_QUESTIONS](state, payload) {
 		state.questions = payload
@@ -78,7 +102,15 @@ const mutations = {
 	},
 
 	[types.SET_ANSWER] (state, payload) {
+		/*
+		update the current state
+		*/
 		state.current = {...state.current, complete: payload}
+		/*
+		insert the current state into the questions array
+		insertAtIndex is a little helper function (see utils)
+		takes an object, an index, and an array, places replaces the item at index with the object 
+		*/
 		state.questions = insertAtIndex(state.current, state.currentIndex, state.questions)
 	},
 

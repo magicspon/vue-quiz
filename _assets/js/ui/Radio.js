@@ -1,11 +1,17 @@
 
 export const Radio = {
+	/*
+		userInput will be our model
+	*/
 	data() {
 		return {
 			userInput: false
 		}
 	},
 
+	/*
+		the props we require
+	*/
 	props: {
 		answers: {
 			type: Array,
@@ -27,12 +33,24 @@ export const Radio = {
 
 	watch: {
 		userInput(value) {
+			/*
+				commit some actions to the $store
+				the mutation functions will handle the change
+			*/
 			if(this.correctIds[0] === value) {
 				this.$store.commit('SET_ANSWER', true)
 				this.$store.commit('UPDATE_SCORE')
 			} else {
 				this.$store.commit('SET_ANSWER', false)
 			}
+		},
+
+
+		'$route' () {
+			/*
+				route changed, reset the userInput
+			*/
+			this.userInput = false
 		}
 	},
 

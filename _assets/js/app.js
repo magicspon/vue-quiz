@@ -15,8 +15,10 @@ if (process.env.NODE_ENV === 'development') {
 
 log(`Logging is enabled!, NODE_ENV: ${process.env.NODE_ENV}`)
 
+// keeps vue-router and vuex insync
 sync(store, router) 
 
+// render the thing
 new Vue({
 	el: '#app',
 	router,
