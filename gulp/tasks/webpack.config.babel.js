@@ -31,7 +31,7 @@ const webpackConfig = env => {
 			filename: `${filename}.js`,
 			publicPath: publicPath
 		},
-		devtool: ifProd('eval', 'source-map'),
+		//devtool: ifProd('eval', 'source-map'),
 		resolve: {
 			alias: {
 				'vue$': 'vue/dist/vue.common.js'
@@ -77,7 +77,7 @@ const webpackConfig = env => {
 
 
 	if(env === 'development') {
-		config.devtool = 'eval-cheap-module-source-map'
+		//config.devtool = 'eval-cheap-module-source-map'
 		config.output.pathinfo = true
 
 		// Create new entries object with webpack-hot-middleware and react-hot-loader (if enabled)
