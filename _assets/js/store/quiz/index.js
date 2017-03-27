@@ -13,7 +13,8 @@ const state = {
 	currentIndex: 0,
 	response: '',
 	current: {},
-	progress: 0
+	progress: 0,
+	modalOpen: false
 }
 
 /*
@@ -28,7 +29,8 @@ const getters = {
 	response: state => state.response,
 	current: state => state.questions[state.currentIndex],
 	progress: state => state.progress,
-	last: state => state.currentIndex === state.questions.length - 1
+	last: state => state.currentIndex === state.questions.length - 1,
+	modalOpen: state => state.modalOpen
 }
 
 
@@ -131,6 +133,10 @@ const mutations = {
 	[types.RESET_QUESTION](state) {
 		state.response = ''
 		state.score = 0
+	},
+
+	[types.TOGGLE_MODAL](state, payload) {
+		state.modalOpen = payload
 	}
 
 }

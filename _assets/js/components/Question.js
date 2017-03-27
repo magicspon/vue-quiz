@@ -59,7 +59,8 @@ export default {
 			current: 'current',
 			response: 'response',
 			last: 'last',
-			progress: 'progress'
+			progress: 'progress',
+			modalOpen: 'modalOpen'
 		}),
 
 		nextQuestion() {
