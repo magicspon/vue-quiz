@@ -50,7 +50,7 @@ export default {
 		task: 'code',
 		watch: true,
 		autoprefixer: {
-			browsers: ['last 3 version']
+			browsers: ['last 8 version']
 		},
 		options: {
 			indentedSyntax: false,
@@ -81,6 +81,36 @@ export default {
 	svgs: {
 		task: 'asset',
 		watch: true,
+		extensions: ['svg']
+	},
+
+	staticAssets: {
+		task: null,
+		watch: false,
+		extensions: ['*']
+	},
+
+	sprites: {
+		task: false,
+		watch: false,
+		mode: {
+			css: {
+				spacing: {
+					padding: 0
+				},
+				dest: './',
+				layout: 'diagonal',
+				sprite: 'svg-sprite.svg',
+				bust: false,
+				render: {
+					scss: {
+						dest: '_system/gulp-output/_svg-sprites.scss',
+						template: 'gulp/libs/sprites.tmp.scss'
+					}
+				}
+			}
+		},
+
 		extensions: ['svg']
 	},
 

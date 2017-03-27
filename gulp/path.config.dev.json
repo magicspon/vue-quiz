@@ -17,9 +17,9 @@
   },
 
 
-  "static": {
+  "staticAssets": {
     "src": "static",
-    "dest": "./"
+    "dest": "dist/static"
   },
 
   "js": {
@@ -62,6 +62,11 @@
     "fileName": "symbols.njk",
     "fileDest": "html/nunjucks/includes"
   },
+
+	"sprites": {
+    "src": "images/svg-sprites",
+    "dest": "dist/images"
+	},
 
   "svgs": {
     "src": "images/svg-assets",

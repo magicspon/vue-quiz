@@ -40,10 +40,6 @@ const webpackConfig = env => {
 		module: {
 			loaders: [
 				{
-					test: /\.vue?$/,
-					loader: 'vue-loader',
-				},
-				{
 					test: /\.js?$/,
 					loader: 'babel-loader',
 					exclude: /node_modules/,
@@ -53,10 +49,9 @@ const webpackConfig = env => {
 								modules: false
 							}],
 							'stage-0',
-							'vue'
+							'react'
 						],
 						'plugins': [
-							'transform-vue-jsx',
 							'transform-runtime',
 							'transform-object-rest-spread',
 							'transform-es2015-parameters',
@@ -113,32 +108,29 @@ const webpackConfig = env => {
 			}
 
 
-			config.plugins.push(new webpack.HotModuleReplacementPlugin())
+			config.plugins.push(
+				new webpack.DefinePlugin({
+					'process.env': {
+						NODE_ENV: '"development"'
+					}
+				}),
+				new webpack.HotModuleReplacementPlugin()	
+			)
 		}
 		// Addtional loaders for dev
-
-		config.plugins.push(
-			new webpack.HotModuleReplacementPlugin(),
-			new webpack.DefinePlugin({
-				'process.env': {
-					NODE_ENV: '"development"'
-				}
-			})
-		)
-
 		config.module.loaders = config.module.loaders.concat(TASK_CONFIG.js.developmentLoaders || [])
 	}
 
 
 	if(env === 'production') {
 		config.plugins.push(
-			new webpack.optimize.UglifyJsPlugin(),
-			new webpack.NoEmitOnErrorsPlugin(),
 			new webpack.DefinePlugin({
 				'process.env': {
 					NODE_ENV: '"production"'
 				}
-			})
+			}),
+			new webpack.optimize.UglifyJsPlugin(),
+			new webpack.NoEmitOnErrorsPlugin()
 		)
 
 		config.output.filename = `${filename}.${TASK_CONFIG.stamp}.js`

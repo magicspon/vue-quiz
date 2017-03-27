@@ -7,7 +7,8 @@ import path from 'path'
 
 export default function browserSyncTask () {
 
-	const config = webpackConfig('development')
+	const env = global.production ? 'production' : 'development'
+	const config = webpackConfig(env)
 	const compiler = webpack(config)
 	const proxyConfig = SERVER.proxy || null
 
@@ -29,7 +30,7 @@ export default function browserSyncTask () {
 		})
 	}
 
-	const server = SERVER.proxy || SERVER.server;
+	const server = SERVER.proxy || SERVER.server
 
 	server.middleware = [
 		require('webpack-dev-middleware')(compiler, {
